@@ -28,3 +28,21 @@ var hasCycle = function(head) {
     }
     return isCycle
 };
+
+
+var hasCycle = function(head) {
+    let isCycle = false
+    let slow = head
+    let fast = head
+    while ( fast && fast.next ) {
+        // no need to check slow
+        // embed the if statement into the while
+        slow = slow.next
+        fast = fast.next.next
+        if ( slow === fast ) {
+            isCycle = true
+            break
+        }
+    }
+    return isCycle
+};
